@@ -1,6 +1,6 @@
 mcpPath = '/home/alex/MCP/6.2/'
 csvPrefix = 'test_' #Leave this blank unless you know what you're doing. This is the prefix to the csv filenames in the conf folder. Used because I have test_methods.csv and test_fields.csv for MCPBot's testcsv command.
-sidesFile = 'MCP6.1ClientToServerMappings.csv' #
+sidesFile = 'MCP6.2ClientToServerMappings.csv' #
 
 import csv, re, sys
 sidesFileReader = csv.DictReader(open(sidesFile))

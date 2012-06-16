@@ -2450,6 +2450,11 @@ field_50083_b,field_50017_b
 field_50084_c,field_50018_c
 field_50085_a,field_50019_a
 field_50120_o,field_50025_o
+field_52010_b,field_52004_b
+field_52011_h,field_52005_h
+field_52012_a,field_52017_a
+field_52024_b,field_52015_b
+field_52025_a,field_52016_a
 func_192_a,func_78_a
 func_193_a,func_6152_a
 func_197_c,func_77_b
@@ -4402,3 +4407,11 @@ func_50078_a,func_50011_a
 func_50086_b,func_50024_b
 func_50087_b,func_50020_b
 func_50100_a,func_50003_a
+func_52005_b,func_52006_b
+func_52016_a,func_52008_a
+func_52017_a,func_52009_a
+func_52018_a,func_52010_a
+func_52020_b,func_52011_b
+func_52021_a,func_52012_a
+func_52022_a,func_52014_a
+func_52023_a,func_52013_a
