@@ -13,6 +13,8 @@ for command in open('cmds').read().splitlines():
     if command_name not in ['help', 'testcsv', 'scm', 'scf', 'ssm', 'ssf', 'fscm', 'fscf', 'fssm', 'fssf', 'pcf', 'pcm', 'psf', 'psm', 'fpcf', 'fpcm', 'fpsf', 'fpsm']:
         raise Error, 'I can\'t let you do that.'
 
+    if command_name in ['getwhite']:
+        linestoread = 1
     if command_name in ['help', 'testcsv', 'pcf', 'pcm', 'psf', 'psm']:
         linestoread = 2
     elif command_name in ['fpcf', 'fpcm', 'fpsf', 'fpsm']:
@@ -21,6 +23,8 @@ for command in open('cmds').read().splitlines():
         linestoread = 4
     elif command_name in ['fscm', 'fscf', 'fssm', 'fssf']:
         linestoread = 5
+    else:
+        raise Error, 'Unknown command.'
 
     s.send(command + '\r\n')
 
