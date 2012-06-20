@@ -4,7 +4,9 @@ sidesFile = 'MCP6.2ClientToServerMappings.csv' #
 
 import csv, re, sys
 sidesFileReader = csv.DictReader(open(sidesFile))
-seargenameCheck = re.compile(r"f(unc|ield)_(.+?)_(.+?)$") # Kept for old scripts which relied on this. Use isSeargeName method instead.
+
+def isSeargeName(name):
+    return re.compile(r"f(unc|ield)_[0-9]+_[a-zA-Z]+(_|)$").match(name)
 
 def getAllMembers ():
     members = {'0':{}, '1':{}}
@@ -39,7 +41,7 @@ def getSeargenameFromSrgLine (line):
 
     searge = qualifiedName[qualifiedName.rfind('/') + 1:]
 
-    if not seargenameCheck.match(searge):
+    if not isSeargeName(searge):
         return None
 
     return searge
@@ -70,9 +72,6 @@ def getMemberListFromCsvs ():
         memberList.append(member)
 
     return memberList
-
-def isSeargeName(name):
-    return re.compile(r"f(unc|ield)_[0-9]+_[a-zA-Z]+(_|)$").match(name)
 
 def outputCommands ():
     try:
