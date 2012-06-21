@@ -5,8 +5,10 @@ sidesFile = 'MCP6.2ClientToServerMappings.csv' #
 import csv, re, sys
 sidesFileReader = csv.DictReader(open(sidesFile))
 
+seargeNameCheck = re.compile(r"f(unc|ield)_[0-9]+_[a-zA-Z]+(_|)$")
+
 def isSeargeName(name):
-    return re.compile(r"f(unc|ield)_[0-9]+_[a-zA-Z]+(_|)$").match(name)
+    return seargeNameCheck.match(name)
 
 def getAllMembers ():
     members = {'0':{}, '1':{}}
