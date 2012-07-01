@@ -24,31 +24,20 @@ def recordStat(side, memberType, stat):
     stats['both'][memberType][stat] += 1
     stats['both']['both'][stat] += 1
 
-for name, info in ContributorTools.getAllMembers()['0'].items():
-    if info['searge'].startswith('func_'):
-        memberType = "methods"
-    elif info['searge'].startswith('field_'):
-        memberType = "fields"
+for side, sideMembers in ContributorTools.getAllMembers().items():
+    sideName = {'0': 'client', '1': 'server'}[side]
+    for name, info in sideMembers.items():
+        if info['searge'].startswith('func_'):
+            memberType = "methods"
+        elif info['searge'].startswith('field_'):
+            memberType = "fields"
 
-    recordStat('client', memberType, 'total')
+        recordStat(sideName, memberType, 'total')
 
-    if info['searge'] == info['name'] and info['desc'] == '':
-        recordStat('client', memberType, 'unnamed')
-    else:
-        recordStat('client', memberType, 'renamed')
-
-for name, info in ContributorTools.getAllMembers()['1'].items():
-    if info['searge'].startswith('func_'):
-        memberType = "methods"
-    elif info['searge'].startswith('field_'):
-        memberType = "fields"
-
-    recordStat('server', memberType, 'total')
-
-    if info['searge'] == info['name'] and info['desc'] == '':
-        recordStat('server', memberType, 'unnamed')
-    else:
-        recordStat('server', memberType, 'renamed')
+        if info['searge'] == info['name'] and info['desc'] == '':
+            recordStat(sideName, memberType, 'unnamed')
+        else:
+            recordStat(sideName, memberType, 'renamed')
 
 def output(d):
     p = str(round(float(d['renamed']) / float(d['total']) * 100, 2)).ljust(5, '0')
