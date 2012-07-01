@@ -27,11 +27,7 @@ def recordStat(side, memberType, stat):
 for side, sideMembers in ContributorTools.getAllMembers().items():
     sideName = {'0': 'client', '1': 'server'}[side]
     for name, info in sideMembers.items():
-        if info['searge'].startswith('func_'):
-            memberType = "methods"
-        elif info['searge'].startswith('field_'):
-            memberType = "fields"
-
+        memberType = {'func_': 'methods', 'field': 'fields'}[info['searge'][:5]]
         recordStat(sideName, memberType, 'total')
 
         if info['searge'] == info['name'] and info['desc'] == '':
