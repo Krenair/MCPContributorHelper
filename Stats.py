@@ -39,15 +39,19 @@ def output(d):
     p = str(round(float(d['renamed']) / float(d['total']) * 100, 2)).ljust(5, '0')
     return ' T ' + str(d['total']) + ' | R ' + str(d['renamed']) + ' | U ' + str(d['unnamed']) + ' | ' + p + '%'
 
+def outputSmallUnnamed(d):
+    p = str(round(float(d['renamed']) / float(d['total']) * 100, 2)).ljust(5, '0')
+    return ' T ' + str(d['total']) + ' | R ' + str(d['renamed']) + ' | U  ' + str(d['unnamed']) + ' | ' + p + '%'
+
 def outputBig(d):
     p = str(round(float(d['renamed']) / float(d['total']) * 100, 2)).ljust(5, '0')
-    return ' T' + str(d['total']) + ' | R' + str(d['renamed']) + ' | U' + str(d['unnamed']) + ' | ' + p + '%'        
+    return ' T' + str(d['total']) + ' | R' + str(d['renamed']) + ' | U ' + str(d['unnamed']) + ' | ' + p + '%'
 
-print '[C][METHODS] :' + output(stats['client']['methods'])
+print '[C][METHODS] :' + outputSmallUnnamed(stats['client']['methods'])
 print '[C][ FIELDS] :' + output(stats['client']['fields'])
 print '[C][   BOTH] :' + output(stats['client']['both'])
-print '[S][METHODS] :' + output(stats['server']['methods'])
-print '[S][ FIELDS] :' + output(stats['server']['fields'])
+print '[S][METHODS] :' + outputSmallUnnamed(stats['server']['methods'])
+print '[S][ FIELDS] :' + outputSmallUnnamed(stats['server']['fields'])
 print '[S][   BOTH] :' + output(stats['server']['both'])
 print '[B][METHODS] :' + output(stats['both']['methods'])
 print '[B][ FIELDS] :' + output(stats['both']['fields'])

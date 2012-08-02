@@ -8,7 +8,11 @@ def checkDifferentDescriptions (clientinfo, serverinfo):
     except:
         maxDistance = 5
 
-    if clientinfo['desc'] != serverinfo['desc'] and Levenshtein.distance(clientinfo['desc'], serverinfo['desc']) <= maxDistance:
+    if clientinfo['name'] != serverinfo['name'] and Levenshtein.distance(clientinfo['name'], serverinfo['name']) <= maxDistance:
+        output(clientinfo, serverinfo)
+    elif clientinfo['name'] != serverinfo['name'] and clientinfo['name'].lower() == serverinfo['name'].lower():
+        output(clientinfo, serverinfo)
+    elif clientinfo['desc'] != serverinfo['desc'] and Levenshtein.distance(clientinfo['desc'], serverinfo['desc']) <= maxDistance:
         output(clientinfo, serverinfo)
     elif clientinfo['desc'] != serverinfo['desc'] and clientinfo['desc'].lower() == serverinfo['desc'].lower():
         output(clientinfo, serverinfo)
