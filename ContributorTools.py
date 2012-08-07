@@ -1,5 +1,5 @@
 mcpPath = '/home/alex/MCP/7.0/'
-csvPrefix = 'test_' #Leave this blank unless you know what you're doing. This is the prefix to the csv filenames in the conf folder. Used because I have test_methods.csv and test_fields.csv for MCPBot's testcsv command.
+csvPrefix = '' #Leave this blank unless you know what you're doing. This is the prefix to the csv filenames in the conf folder. Used because I have test_methods.csv and test_fields.csv for MCPBot's testcsv command.
 sidesFile = 'MCP7.0ClientToServerMappings.csv' #
 
 import csv, re, sys
