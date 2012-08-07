@@ -48,11 +48,11 @@ def outputBig(d):
     return ' T' + str(d['total']) + ' | R' + str(d['renamed']) + ' | U ' + str(d['unnamed']) + ' | ' + p + '%'
 
 print '[C][METHODS] :' + outputSmallUnnamed(stats['client']['methods'])
-print '[C][ FIELDS] :' + output(stats['client']['fields'])
+print '[C][ FIELDS] :' + outputSmallUnnamed(stats['client']['fields'])
 print '[C][   BOTH] :' + output(stats['client']['both'])
 print '[S][METHODS] :' + outputSmallUnnamed(stats['server']['methods'])
 print '[S][ FIELDS] :' + outputSmallUnnamed(stats['server']['fields'])
-print '[S][   BOTH] :' + output(stats['server']['both'])
-print '[B][METHODS] :' + output(stats['both']['methods'])
+print '[S][   BOTH] :' + outputSmallUnnamed(stats['server']['both'])
+print '[B][METHODS] :' + outputSmallUnnamed(stats['both']['methods'])
 print '[B][ FIELDS] :' + output(stats['both']['fields'])
 print '[B][   BOTH] :' + outputBig(stats['both']['both'])
