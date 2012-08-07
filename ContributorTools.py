@@ -1,6 +1,6 @@
 mcpPath = '/home/alex/MCP/7.0/'
 csvPrefix = 'test_' #Leave this blank unless you know what you're doing. This is the prefix to the csv filenames in the conf folder. Used because I have test_methods.csv and test_fields.csv for MCPBot's testcsv command.
-sidesFile = 'MCP7.0preClientToServerMappings.csv' #
+sidesFile = 'MCP7.0ClientToServerMappings.csv' #
 
 import csv, re, sys
 sidesFileReader = csv.DictReader(open(sidesFile))
@@ -53,13 +53,13 @@ def forEachMember (f):
         try:
             clientinfo = members['0'][row['client']]
         except KeyError as keyError:
-            #print 'Missing client', keyError.message
+            print 'Missing client', keyError.message
             continue
 
         try:
             serverinfo = members['1'][row['server']]
         except KeyError as keyError:
-            #print 'Missing server', keyError.message
+            print 'Missing server', keyError.message
             continue
 
         f(clientinfo, serverinfo)
