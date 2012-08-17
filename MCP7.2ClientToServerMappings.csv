@@ -1124,6 +1124,7 @@ func_77619_b,func_77619_b
 func_72373_m,func_72373_m
 func_70061_h,func_70061_h
 func_76557_i,func_76557_i
+func_80007_l,func_80007_l
 field_73062_L,field_73062_L
 field_71994_by,field_71994_by
 func_77964_b,func_77964_b
@@ -1617,6 +1618,7 @@ field_72631_o,field_72631_o
 func_75858_a,func_75858_a
 func_76467_g,func_76467_g
 field_73102_f,field_73102_f
+func_74446_k,func_74446_k
 func_72280_l,func_72280_l
 field_73296_b,field_73296_b
 field_71658_s,field_71658_s
@@ -3098,6 +3100,7 @@ func_72689_b,func_72689_b
 field_77919_g,field_77919_g
 func_72360_c,func_72360_c
 field_75338_d,field_75338_d
+field_80004_Q,field_80004_Q
 field_73294_l,field_73294_l
 field_77822_ae,field_77822_ae
 func_70900_e,func_70900_e
@@ -4483,6 +4486,7 @@ func_76746_c,func_76746_c
 func_76498_b,func_76498_b
 field_75322_b,field_75322_b
 field_73226_t,field_73226_t
+field_80001_f,field_80001_f
 field_75318_f,field_75318_f
 func_70626_be,func_70626_be
 func_73405_i,func_73405_i
@@ -5130,7 +5134,7 @@ func_72962_a,func_72962_a
 func_70043_V,func_70043_V
 func_70610_aX,func_70610_aX
 field_73456_b,field_73456_b
-func_74446_k,func_74446_k
+field_80002_g,field_80002_g
 field_74488_z,field_74488_z
 field_73131_c,field_73131_c
 func_76495_b,func_76495_b
