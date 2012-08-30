@@ -35,24 +35,20 @@ for side, sideMembers in ContributorTools.getAllMembers().items():
         else:
             recordStat(sideName, memberType, 'renamed')
 
-def output(d):
-    p = str(round(float(d['renamed']) / float(d['total']) * 100, 2)).ljust(5, '0')
-    return ' T ' + str(d['total']) + ' | R ' + str(d['renamed']) + ' | U ' + str(d['unnamed']) + ' | ' + p + '%'
+def output(side, memberType):
+    data = stats[side][memberType]
+    total = ' ' * (5 - len(str(data['total']))) + str(data['total'])
+    renamed = ' ' * (5 - len(str(data['renamed']))) + str(data['total'])
+    unnamed = ' ' * (5 - len(str(data['unnamed']))) + str(data['unnamed'])
+    percent = str(round(float(data['renamed']) / float(data['total']) * 100, 2)).ljust(5, '0')
+    return '[' + side[0].upper() + '][' + memberType.upper().rjust(7) + '] : T' + total + ' | R' + renamed + ' | U' + unnamed + ' | ' + percent + '%'
 
-def outputSmallUnnamed(d):
-    p = str(round(float(d['renamed']) / float(d['total']) * 100, 2)).ljust(5, '0')
-    return ' T ' + str(d['total']) + ' | R ' + str(d['renamed']) + ' | U  ' + str(d['unnamed']) + ' | ' + p + '%'
-
-def outputBig(d):
-    p = str(round(float(d['renamed']) / float(d['total']) * 100, 2)).ljust(5, '0')
-    return ' T' + str(d['total']) + ' | R' + str(d['renamed']) + ' | U ' + str(d['unnamed']) + ' | ' + p + '%'
-
-print '[C][METHODS] :' + outputSmallUnnamed(stats['client']['methods'])
-print '[C][ FIELDS] :' + outputSmallUnnamed(stats['client']['fields'])
-print '[C][   BOTH] :' + output(stats['client']['both'])
-print '[S][METHODS] :' + outputSmallUnnamed(stats['server']['methods'])
-print '[S][ FIELDS] :' + outputSmallUnnamed(stats['server']['fields'])
-print '[S][   BOTH] :' + outputSmallUnnamed(stats['server']['both'])
-print '[B][METHODS] :' + outputSmallUnnamed(stats['both']['methods'])
-print '[B][ FIELDS] :' + output(stats['both']['fields'])
-print '[B][   BOTH] :' + outputBig(stats['both']['both'])
+print output('client', 'methods')
+print output('client', 'fields')
+print output('client', 'both')
+print output('server', 'methods')
+print output('server', 'fields')
+print output('server', 'both')
+print output('both', 'methods')
+print output('both', 'fields')
+print output('both', 'both')
