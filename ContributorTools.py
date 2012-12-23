@@ -1,6 +1,6 @@
-mcpPath = '/home/alex/MCP/7.2/'
+mcpPath = '/home/alex/MCP/7.25/'
 csvPrefix = '' #Leave this blank unless you know what you're doing. This is the prefix to the csv filenames in the conf folder. Used because I have test_methods.csv and test_fields.csv for MCPBot's testcsv command.
-sidesFile = 'MCP7.2ClientToServerMappings.csv' #
+sidesFile = 'MCP7.25ClientToServerMappings.csv' # Leave this on the old version before running GetMembersOnBothSides.py
 
 import csv, re, sys
 sidesFileReader = csv.DictReader(open(sidesFile))
